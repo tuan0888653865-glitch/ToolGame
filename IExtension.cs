@@ -1,16 +1,24 @@
 ﻿using System;
+using System.IO;
 
-namespace TinhKiemAuto
+namespace ProtoBuf
 {
-	// Token: 0x0200009B RID: 155
-	internal interface IExtension
+	// Token: 0x0200001F RID: 31
+	public interface IExtension
 	{
-		// Token: 0x17000249 RID: 585
-		// (get) Token: 0x060009A5 RID: 2469
-		string Name { get; }
+		// Token: 0x060000FD RID: 253
+		Stream BeginAppend();
 
-		// Token: 0x1700024A RID: 586
-		// (get) Token: 0x060009A6 RID: 2470
-		IUIExtension UIExtension { get; }
+		// Token: 0x060000FE RID: 254
+		void EndAppend(Stream stream, bool commit);
+
+		// Token: 0x060000FF RID: 255
+		Stream BeginQuery();
+
+		// Token: 0x06000100 RID: 256
+		void EndQuery(Stream stream);
+
+		// Token: 0x06000101 RID: 257
+		int GetLength();
 	}
 }

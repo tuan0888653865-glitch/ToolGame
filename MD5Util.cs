@@ -3,12 +3,12 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace TinhKiemAuto
+namespace TinhKiemAuto.Models
 {
-	// Token: 0x02000118 RID: 280
+	// Token: 0x02000131 RID: 305
 	public class MD5Util
 	{
-		// Token: 0x06000EFD RID: 3837 RVA: 0x00072DB4 File Offset: 0x00070FB4
+		// Token: 0x06000FCC RID: 4044 RVA: 0x000754B4 File Offset: 0x000736B4
 		public static string GetFileMD5(string fileName)
 		{
 			string result = string.Empty;
@@ -22,7 +22,7 @@ namespace TinhKiemAuto
 			return result;
 		}
 
-		// Token: 0x06000EFE RID: 3838 RVA: 0x00072DFC File Offset: 0x00070FFC
+		// Token: 0x06000FCD RID: 4045 RVA: 0x000754FC File Offset: 0x000736FC
 		public static string GetMD5Hash(Stream stream)
 		{
 			byte[] array = MD5.Create().ComputeHash(stream);
@@ -34,7 +34,7 @@ namespace TinhKiemAuto
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x06000EFF RID: 3839 RVA: 0x00072E48 File Offset: 0x00071048
+		// Token: 0x06000FCE RID: 4046 RVA: 0x00075548 File Offset: 0x00073748
 		public static string GetMD5Hash(string input)
 		{
 			byte[] array = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
@@ -46,7 +46,7 @@ namespace TinhKiemAuto
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x06000F00 RID: 3840 RVA: 0x00072EA0 File Offset: 0x000710A0
+		// Token: 0x06000FCF RID: 4047 RVA: 0x000755A0 File Offset: 0x000737A0
 		public static bool VerfyMd5Hash(string input, string hash)
 		{
 			string md5Hash = MD5Util.GetMD5Hash(input);
